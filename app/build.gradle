@@ -34,4 +34,7 @@ android {
 
 dependencies {
     implementation project(path: ':core')
+
+    // Splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.0'
 }

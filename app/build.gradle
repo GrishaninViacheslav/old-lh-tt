@@ -40,7 +40,11 @@ dependencies {
     implementation project(path: ':network')
     implementation project(path: ':navigation')
     implementation project(path: ':companies-list')
+    implementation project(path: ':company-details')
 
     // Splash screen
     implementation 'androidx.core:core-splashscreen:1.0.0'
+
+    // Map
+    implementation 'com.yandex.android:maps.mobile:4.2.1-lite'
 }

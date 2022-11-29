@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'io.github.grishaninvyacheslav.lh.network'
+    namespace 'io.github.grishaninvyacheslav.lh.company_details'
     compileSdk 33
 
     defaultConfig {
@@ -21,11 +21,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    buildTypes.each {
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file("api.properties").newDataInputStream())
-        def apiUrl = properties.getProperty("API_URL", "[EXCEPTION PLACEHOLDER, LOOK AT BUILD.GRADLE: failed to extract apiUrl from api.properties]")
-        it.buildConfigField "String", "API_URL", apiUrl
+    buildFeatures {
+        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,11 +35,10 @@ android {
 
 dependencies {
     implementation project(path: ':core')
+    implementation project(path: ':core-ui')
+    implementation project(path: ':network')
+    implementation project(path: ':navigation')
 
-    // Network
-    api "com.squareup.retrofit2:retrofit:2.9.0"
-    api "com.squareup.retrofit2:converter-gson:2.9.0"
-    api "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
-
-    api 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    // Map
+    implementation 'com.yandex.android:maps.mobile:4.2.1-lite'
 }

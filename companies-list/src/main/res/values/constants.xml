@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="view_pager_offscreen_page_scale" format="float" type="dimen">0.83F</item>
+</resources>

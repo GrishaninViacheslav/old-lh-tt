@@ -38,4 +38,12 @@ dependencies {
     testApi 'junit:junit:4.13.2'
     androidTestApi 'androidx.test.ext:junit:1.1.4'
     androidTestApi 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // DI
+    def koin_version = "3.1.2"
+    api "io.insert-koin:koin-core:$koin_version"
+    api "io.insert-koin:koin-test:$koin_version"
+    api "io.insert-koin:koin-android:$koin_version"
+    api "io.insert-koin:koin-core-ext:3.0.1"
+    api "io.insert-koin:koin-android-compat:$koin_version"
 }

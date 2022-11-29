@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/company_details_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false">
+
+            <com.yandex.mapkit.mapview.MapView
+                android:id="@+id/company_location_preview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/location_preview_height"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/company_location_preview_block"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/location_preview_height"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/company_name_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/bg_name_gradient"
+                app:layout_constraintBottom_toBottomOf="@id/company_location_preview_block"
+                app:layout_constraintLeft_toLeftOf="@id/company_location_preview_block"
+                app:layout_constraintRight_toRightOf="@id/company_location_preview_block"
+                app:layout_constraintTop_toTopOf="@id/company_image_card" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/company_image_card"
+                android:layout_width="@dimen/company_image_width"
+                android:layout_height="@dimen/company_image_height"
+                android:layout_margin="@dimen/outer_margin"
+                android:elevation="10dp"
+                app:cardCornerRadius="@dimen/circle_corner_radius"
+                app:layout_constraintBottom_toBottomOf="@id/company_location_preview_block"
+                app:layout_constraintLeft_toLeftOf="@id/company_location_preview_block">
+
+                <ImageView
+                    android:id="@+id/company_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/company_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/outer_margin"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_size"
+                app:layout_constraintBottom_toBottomOf="@id/company_image_card"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/company_image_card"
+                app:layout_constraintRight_toRightOf="@id/company_location_preview_block"
+                tools:text="Lorem ipsum" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/company_contacts_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/outer_margin"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/company_location_preview_block">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/outer_margin"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/company_site"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="left|center_vertical"
+                        android:textAllCaps="false"
+                        android:textColor="@color/selectable_text"
+                        app:icon="@drawable/ic_site"
+                        app:iconSize="20dp"
+                        app:iconTint="@color/selectable_text"
+                        tools:text="www.sparta-fitness.ru" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/company_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="left|center_vertical"
+                        android:textAllCaps="false"
+                        android:textColor="@color/selectable_text"
+                        app:icon="@drawable/ic_phone"
+                        app:iconSize="20dp"
+                        app:iconTint="@color/selectable_text"
+                        tools:text="+7 (987)-521-88-72" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/company_description_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/outer_margin"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/company_contacts_card"
+                app:layout_constraintVertical_bias="1">
+
+                <TextView
+                    android:id="@+id/company_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/outer_margin"
+                    android:gravity="center_vertical"
+                    tools:text="By Park Inn\r\nПриглашаем посетить европейский ресторан, который является украшением международного отеля Park Inn by Radisson, находящегося на центральной площади столицы Удмуртии.\r\n\r\nЕвропейская кухня порадует гостей города и ценителей гармоничным вкусом и разнообразием выбора. Обширные площади ресторана позволят уютно расположиться большому количеству гостей. Банкетный зал располагает к тому, чтобы организовать официальный прием иностранных делегаций. Привлекательная обстановка доставит удовольствие гармонией стиля, утонченность интерьера усладит взор высоких гостей грациозным изяществом. Живая музыка подарит прекрасное настроение и оставит приятное послевкусие. Для удобства клиентов ресторан предоставляет свободный Wi-Fi. В теплое время открыта для посещения летняя терраса al Café, где вы сможете насладиться прохладительными напитками и яствами.\r\n\r\nОпытный шеф-повар представит все богатство выбора традиционной европейской кухни и нестандартные авторские блюда. Естественная европейская кухня славится широким ансамблем блюд из овощей и мяса с небольшим добавлением приправ и специй. Это способствует достижению оптимально насыщенного и естественного вкуса компонентов. Перед употреблением блюда рекомендуется заказать аперитив – какой-либо спиртной напиток – для повышения аппетита и лучшего усвоения пищи. \r\n\r\nОпределить наше точное местоположение поможет сайт Ижевска. С нетерпением ожидаем появления новых гостей." />
+            </androidx.cardview.widget.CardView>
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/retry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/retry_error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/outer_margin"
+            android:gravity="center" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retry_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry" />
+    </LinearLayout>
+</FrameLayout>

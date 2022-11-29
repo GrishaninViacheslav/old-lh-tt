@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_page_margin">-29dp</dimen>
+    <dimen name="view_page_offset">74dp</dimen>
+    <dimen name="inner_padding">30dp</dimen>
+    <dimen name="card_item_width">266dp</dimen>
+    <dimen name="card_item_height">266dp</dimen>
+    <dimen name="card_item_corner_radius">25dp</dimen>
+    <dimen name="card_item_elevation">15dp</dimen>
+    <dimen name="title_size">20sp</dimen>
+    <dimen name="outer_margin">20dp</dimen>
+</resources>

@@ -1,20 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'io.github.grishaninvyacheslav.lh.tt'
+    namespace 'io.github.grishaninvyacheslav.lh.company_details'
     compileSdk 33
 
     defaultConfig {
-        applicationId "io.github.grishaninvyacheslav.lh.tt"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -37,13 +35,9 @@ android {
 
 dependencies {
     implementation project(path: ':core')
+    implementation project(path: ':core-ui')
     implementation project(path: ':network')
     implementation project(path: ':navigation')
-    implementation project(path: ':companies-list')
-    implementation project(path: ':company-details')
-
-    // Splash screen
-    implementation 'androidx.core:core-splashscreen:1.0.0'
 
     // Map
     implementation 'com.yandex.android:maps.mobile:4.2.1-lite'

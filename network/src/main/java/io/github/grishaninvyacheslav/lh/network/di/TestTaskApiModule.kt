@@ -8,7 +8,6 @@ import okhttp3.OkHttpClient
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 val testTaskApiModule = module {
@@ -29,7 +28,6 @@ fun provideTestTaskApi(
     return Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(client)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
         .create(TestTaskDataSource::class.java)

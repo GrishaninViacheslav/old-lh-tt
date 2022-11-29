@@ -18,15 +18,18 @@ class CompaniesListViewModel(
             if (mutableCompaniesListState.value != null) {
                 return mutableCompaniesListState
             }
-            return mutableCompaniesListState.apply {
-                value = CompaniesListState.Loading
-                viewModelScope.launch(Dispatchers.IO + companiesListExceptionHandler) {
-                    postValue(
-                        CompaniesListState.Success(getCompaniesListUseCase())
-                    )
-                }
-            }
+            updateListState()
+            return mutableCompaniesListState
         }
+
+    fun updateListState() {
+        mutableCompaniesListState.value = CompaniesListState.Loading
+        viewModelScope.launch(Dispatchers.IO + companiesListExceptionHandler) {
+            mutableCompaniesListState.postValue(
+                CompaniesListState.Success(getCompaniesListUseCase())
+            )
+        }
+    }
 
     private val companiesListExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         mutableCompaniesListState.postValue(CompaniesListState.Error(throwable))

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="outer_margin">20dp</dimen>
+    <dimen name="title_size">25sp</dimen>
+    <dimen name="inner_margin">10dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+    <dimen name="min_clickable_size">50dp</dimen>
+    <dimen name="location_preview_height">200dp</dimen>
+    <dimen name="company_image_width">100dp</dimen>
+    <dimen name="company_image_height">100dp</dimen>
+    <dimen name="circle_corner_radius">100dp</dimen>
+</resources>
